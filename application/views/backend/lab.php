@@ -72,7 +72,7 @@
 		<script type="text/javascript" src="<?php echo base_url();?>js/backend/alertify.min.js"></script>
 		<script type="text/javascript">
 		$(document).ready(function(){
-    	$('#labtable').DataTable();
+    	$('#labtable').DataTable();  
 		});
 		</script>
 		<script type="text/javascript">
