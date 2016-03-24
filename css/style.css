@@ -1,0 +1,9 @@
+.carousel-inner .item img 
+{
+	width: 100%;
+	min-height: 200px;
+	max-height: 300px;
+}
+.myform{
+	width:300px;
+}
