@@ -2,7 +2,7 @@
 <html>
 <head>
 	<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/bootstrap.min.css">
-	<title><?php foreach($page_title as $title) { 	?> 	<?php echo $title->teacher_username; ?> 	<?php } ?> 	</title>
+	<title>Teacher Detail Information</title>
 </head>
 <body>
 	<div class="container">

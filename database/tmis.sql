@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 25, 2016 at 11:12 AM
+-- Generation Time: Mar 25, 2016 at 04:43 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -115,13 +115,13 @@ CREATE TABLE IF NOT EXISTS `tblteacher` (
 --
 
 INSERT INTO `tblteacher` (`teacher_id`, `teacher_name`, `subject_id`, `lab_id`, `time_date`, `teacher_isactive`, `teacher_salary`, `teacher_image`, `is_deleted`) VALUES
-(1, 'ssss', '1', '3', '0000-00-00', 0, '2333', '029.jpg', 1),
-(2, 'ssssddd', '2', '3', '0000-00-00', 0, '2222', '029.jpg', 1),
-(3, 'nnn', '1', '3', '2016-03-24', 0, '1222', '029.jpg', 0),
-(4, 'dsdfsdf', '1', '3', '0000-00-00', 0, '2222', '029.jpg', 1),
-(5, 'nnn', '1', '3', '2016-03-24', 0, '1222', '029.jpg', 0),
-(6, 'nnn', '1', '3', '2016-03-24', 1, '1222', '0210.jpg', 0),
-(7, '0', '0', '0', '2016-03-25', 1, '0', '_rose03.jpg', 0);
+(1, 'Surjeeta', '1', '3', '0000-00-00', 0, '2333', '029.jpg', 1),
+(2, 'Manita', '2', '3', '0000-00-00', 0, '2222', '029.jpg', 1),
+(3, 'Sweta', '1', '3', '2016-03-24', 1, '1222', '029.jpg', 0),
+(4, 'Sujan', '1', '3', '0000-00-00', 0, '2222', '029.jpg', 1),
+(5, 'Kapil', '1', '3', '2016-03-24', 1, '1222', '029.jpg', 0),
+(6, 'Ram', '1', '3', '2016-03-24', 1, '1222', '0210.jpg', 0),
+(7, 'Hari', '0', '0', '2016-03-25', 1, '0', '_rose03.jpg', 0);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
