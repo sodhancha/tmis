@@ -129,4 +129,9 @@ class Admin extends CI_Controller {
 		$this->session->sess_destroy();
 		redirect('backend/admin');
 	}
+
+	public function user()
+	{
+		$this->laod->view('backend/user');
+	}
 }

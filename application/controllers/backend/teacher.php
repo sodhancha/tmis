@@ -83,5 +83,21 @@ public function do_imgupload(){
       $query = $this->records->addTeacher($data);
       redirect('backend/teacher');
   }
+
+  public function delTeacher()
+  {
+    $id = $this->input->post('id');
+    $data = $this->records->delTeacher($id);
+    echo json_encode($data);
+    die();
+  }
+
+  public function editTeacher()
+  {
+    $id = $this->input->post('id');
+    $data = $this->records->editTeacher($id);
+    echo json_encode($data);
+    die();
+  }
 	
 }

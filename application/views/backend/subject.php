@@ -71,7 +71,6 @@
 							<button type="button" class="btn btn-lg btn-danger delete" data-toggle="modal" data-target="#delete" data-whatever="@mdo" id="<?php echo $sub->subject_id?>">Delete</button>
 							<button type="button" class="btn btn-lg btn-success edit" data-toggle="modal" data-target="#edit" data-whatever="@mdo" id="<?php echo $sub->subject_id?>">Edit</button>
 						</td>
-		
 					</tr>
 				<?php }
 				?>
@@ -113,16 +112,11 @@
 	<script type="text/javascript" src="<?php echo base_url();?>js/backend/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>js/backend/alertify.min.js"></script>
 	<script type="text/javascript">
-	$(document).ready(function(){
-    $('#subjecttable').DataTable();
-	});
+		$(document).ready(function(){
+	    $('#subjecttable').DataTable();
+		});
 	</script>
 	<script type="text/javascript">
-		$(document).ready(function(){
-    	$('#subjecttable').DataTable();  
-		});
-		</script>
-		<script type="text/javascript">
 		$(".delete").click(function(){
 		var subcat = {"id" : $(event.target).attr('id')};
 		alertify.confirm("Are you sure to delete?", function(){

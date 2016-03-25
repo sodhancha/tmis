@@ -89,10 +89,26 @@ class Records extends CI_Model{
 
 	public function getTeacher()
 	{
-		$sql = "SELECT t.teacher_name, s.subject_name, l.lab_name, t.time_date, t.teacher_salary, t.teacher_image FROM `tblteacher` t
+		$sql = "SELECT t.teacher_id, t.teacher_name, s.subject_name, l.lab_name, t.time_date, t.teacher_salary, t.teacher_image FROM `tblteacher` t
 				INNER JOIN tblsubject s ON s.subject_id = t.subject_id
-				INNER JOIN tbllab l ON l.lab_id = t.lab_id";
+				INNER JOIN tbllab l ON l.lab_id = t.lab_id WHERE t.is_deleted = '0'";
 		$log=$this->db->query($sql);
 		return $log->result();
+	}
+
+	public function delTeacher($id)
+	{
+		$delete = "UPDATE tblteacher SET is_deleted = '1' WHERE teacher_id = '$id'";
+		$query = $this->db->query($delete);
+		return $query;
+	}
+
+	public function editTeacher($id)
+	{
+		$view = "SELECT t.teacher_id, t.teacher_name, s.subject_name, l.lab_name, t.time_date, t.teacher_salary, t.teacher_image FROM `tblteacher` t
+				INNER JOIN tblsubject s ON s.subject_id = t.subject_id
+				INNER JOIN tbllab l ON l.lab_id = t.lab_id WHERE t.is_deleted = '0'";
+		$query = $this->db->query($view);
+		return $query->result();
 	}
 }
