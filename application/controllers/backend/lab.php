@@ -41,4 +41,34 @@ class Lab extends CI_Controller {
 		die();
 	}
 
+	public function editLab()
+	{
+		$id = $this->input->post('id');
+		$data = $this->records->editLab($id);
+		echo json_encode($data);
+		die();
+	}
+
+	public function updateLab()
+	{
+		$lid=$_POST['lab_id'];
+        $labname=$_POST['lab_name'];
+        $query = $this->records->updateLab($lid, $labname);
+
+        if($query){
+          $this->session->set_flashdata('updatemsg','<div class="alert alert-success">
+                  <strong>Success!</strong>You have updated successfully!!
+                  </div>'
+                  );
+                  redirect('backend/lab');
+        }
+        else{
+          $this->session->set_flashdata('updateunmsg','<div class="alert alert-success">
+                  <strong>Sorry!</strong>Cannot be updated!!
+                  </div>'
+                  );
+                  redirect('backend/lab');
+        }
+	}
+
 }

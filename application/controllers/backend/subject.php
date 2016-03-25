@@ -34,4 +34,42 @@ class Subject extends CI_Controller {
 			redirect('backend/subject');
 	}
 
+	public function delSub()
+	{
+		$id = $this->input->post('id');
+		$data = $this->records->delSub($id);
+		echo json_encode($data);
+		die();
+	}
+
+	public function editSub()
+	{
+		$id = $this->input->post('id');
+		$data = $this->records->editSub($id);
+		echo json_encode($data);
+		die();
+	}
+
+	public function updateLab()
+	{
+		$sid=$_POST['subject_id'];
+        $subname=$_POST['subject_name'];
+        $subdesc=$_POST['subject_description'];
+        $query = $this->records->updateSub($sid, $subname, $subdesc);
+        if($query){
+          $this->session->set_flashdata('updatemsg','<div class="alert alert-success">
+                  <strong>Success!</strong>You have updated successfully!!
+                  </div>'
+                  );
+                  redirect('backend/subject');
+        }
+        else{
+          $this->session->set_flashdata('updateunmsg','<div class="alert alert-success">
+                  <strong>Sorry!</strong>Cannot be updated!!
+                  </div>'
+                  );
+                  redirect('backend/subject');
+        }
+	}
+
 }

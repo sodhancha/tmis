@@ -7,6 +7,7 @@ class Teacher extends CI_Controller {
 		parent:: __construct();
 		$this->load->model('records');
 		$this->load->library('session');
+    $this->load->helper('date');
 	}
 
 public function do_imgupload(){
@@ -60,6 +61,7 @@ public function do_imgupload(){
 	{
     $data['subject_list'] = $this->records->getSubject();
 		$data['lab_list'] = $this->records->getLab();
+    $data['teacher_list'] = $this->records->getTeacher();
 		$data['navbar']=$this->_get_navbar();
 		$data['sidebar'] = $this->_get_sidebar();
 		$this->load->view('backend/teacher', $data);
@@ -73,7 +75,9 @@ public function do_imgupload(){
           'subject_id' => $this->input->post('subject_id'),
           'lab_id' => $this->input->post('lab_id'),
           'teacher_salary' => $this->input->post('teacher_salary'),
-          'teacher_image' => $this->input->post('file_name'),
+          'teacher_image' => $image['file_name'],
+          'time_date' =>date('Y-m-d'),
+          'teacher_isactive' => '1',
 
       );
       $query = $this->records->addTeacher($data);
