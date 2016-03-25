@@ -140,8 +140,17 @@ class Admin extends CI_Controller {
 
 	public function user()
 	{
+		$data['user_list'] = $this->records->getAdmin();
 		$data['navbar']=$this->_get_navbar();
 		$data['sidebar'] = $this->_get_sidebar();
 		$this->load->view('backend/user', $data);
+	}
+
+	public function delAdmin()
+	{
+		$id = $this->input->post('id');
+		$data = $this->records->delAdmin($id);
+		echo json_encode($data);
+		die();
 	}
 }

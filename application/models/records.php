@@ -13,6 +13,20 @@ class Records extends CI_Model{
 		return $log->result();
 	}
 
+	public function getAdmin()
+	{
+		$sql = "SELECT * FROM tbladmin";
+		$log=$this->db->query($sql);
+		return $log->result();
+	}
+
+	public function delAdmin($id)
+	{
+		$delete = "UPDATE tblteacher SET admin_isdeleted = '1' WHERE admin_id = '$id'";
+		$query = $this->db->query($delete);
+		return $query;
+	}
+
 	public function addSubject($data)
 	{
 		$query = $this->db->insert('tblsubject', $data);
@@ -21,7 +35,7 @@ class Records extends CI_Model{
 
 	public function getSubject()
 	{
-		$sql = "SELECT * FROM tblsubject  where is_deleted =0";
+		$sql = "SELECT * FROM tblsubject where is_deleted =0";
 		$log=$this->db->query($sql);
 		return $log->result();
 	}
