@@ -3,6 +3,7 @@
 	<head>
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/backend/bootstrap.min.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/backend/jquery.dataTables.min.css">
+		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/backend/lightbox.css">
 		<link rel="stylesheet" type="text/css" href="<?php echo base_url();?>css/backend/alertify.min.css">
 		<title>Teacher View</title>
 	</head>
@@ -100,7 +101,10 @@
 						<td> <?php echo $teacher->lab_name; ?></td>
 						<td> <?php echo $teacher->time_date; ?></td>
 						<td> <?php echo $teacher->teacher_salary; ?></td>
-						<td> <?php echo $teacher->teacher_image; ?></td>
+						<td><a href="<?php echo base_url();?>assets/upload/teacher/<?php echo $teacher->teacher_image;?>" 
+							data-title="<?php echo $teacher->teacher_image;?>" 
+							data-lightbox="teachers"><img src="<?php echo base_url();?>assets/upload/teacher/<?php echo $teacher->teacher_image;?>" 
+							style="width:50px; height:50px;" class="img-responsive" alt="Responsive image"></a></td>
 						<td>
 							<button type="button" class="btn btn-lg btn-danger delete" data-toggle="modal" data-target="#delete" data-whatever="@mdo" id="<?php echo $teacher->teacher_id?>">Delete</button>
 							<button type="button" class="btn btn-lg btn-success edit" data-toggle="modal" data-target="#tedit" data-whatever="@mdo" id="<?php echo $teacher->teacher_id?>">Edit</button>
@@ -176,6 +180,7 @@
 
 	<script type="text/javascript" src="<?php echo base_url();?>js/backend/jquery-2.1.3.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>js/backend/bootstrap.min.js"></script>
+	<script type="text/javascript" src="<?php echo base_url();?>js/backend/lightbox.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>js/backend/jquery.dataTables.min.js"></script>
 	<script type="text/javascript" src="<?php echo base_url();?>js/backend/alertify.min.js"></script>
 	<script type="text/javascript">

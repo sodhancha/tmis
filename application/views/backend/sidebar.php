@@ -6,7 +6,7 @@
 				<a href="<?php echo base_url();?>backend/teacher" class="list-group-item" id="period">Teacher</a>
 				<a href="<?php echo base_url();?>backend/subject" class="list-group-item" id="period">Subject</a>
 				<a href="<?php echo base_url();?>backend/lab" class="list-group-item" id="period">Lab</a>
-				<a href="<?php echo base_url();?>backend/" class="list-group-item" id="period">User</a>
+				<a href="<?php echo base_url();?>backend/admin/user" class="list-group-item" id="period">User</a>
 			</div>
 		</div>
 	</div>

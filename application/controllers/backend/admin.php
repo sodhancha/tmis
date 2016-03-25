@@ -13,6 +13,14 @@ class Admin extends CI_Controller {
 		$this->load->view('backend/index');
 	}
 
+	function _get_navbar(){
+		return $this->load->view('backend/navbar',TRUE);
+	}
+
+	function _get_sidebar(){
+		return $this->load->view('backend/sidebar',TRUE);
+	}
+
 	public function do_imgupload(){
        $config['upload_path'] = './assets/upload/admin';
 
@@ -132,6 +140,8 @@ class Admin extends CI_Controller {
 
 	public function user()
 	{
-		$this->laod->view('backend/user');
+		$data['navbar']=$this->_get_navbar();
+		$data['sidebar'] = $this->_get_sidebar();
+		$this->load->view('backend/user', $data);
 	}
 }
