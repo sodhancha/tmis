@@ -10,6 +10,12 @@ class Teacher extends CI_Controller {
     $this->load->helper('date');
 	}
 
+/*
+  Copy pasting code is not bad but try formatting it so that it looks neat.
+  It will help you when looking back in the future.
+
+  Also things like Image Upload may have to be done from time to time hence you can perhaps create a model for it ?
+ */
 public function do_imgupload(){
        $config['upload_path'] = './assets/upload/teacher';
 

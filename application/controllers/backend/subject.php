@@ -8,6 +8,10 @@ class Subject extends CI_Controller {
 		$this->load->library('session');
 	}
 
+	/*
+		I like what you have done here.
+		Maybe in the next vesion you can put _get_navbar and _get_sidebar inside of a BaseController and extend BaseController instead of CI_Controller
+	 */
 	function _get_navbar(){
 		return $this->load->view('backend/navbar',TRUE);
 	}
